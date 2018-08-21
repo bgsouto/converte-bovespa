@@ -44,11 +44,11 @@ with open("C:/Users/c122802/Documents/Estudos/COTAHIST_A2017.TXT") as arquivo_bo
             ULTIMO                  = float(line[108:121])/100
             MELHOR_OFERTA_COMPRA    = float(line[121:134])/100
             MELHOR_OFERTA_VENDA     = float(line[134:147])/100
+            PRE_EX_OP               = float(lineline[188:201])/100
             #fim
             TOTAL_NEGOCIOS          = line[147:152]
             TITULOS_NEGOCIADOS      = line[152:170]
             VOLUME_TIT_NEGOCIADOS   = line[170:188]
-            PRE_EX_OP               = line[188:201]
             IND_OPC                 = line[201:202]
             DATA_VENC_OP            = line[202:210]
             FATOR_DE_COT            = line[210:217]
@@ -64,7 +64,7 @@ with open("C:/Users/c122802/Documents/Estudos/COTAHIST_A2017.TXT") as arquivo_bo
                 +str(ULTIMO).replace(".",",")+";"+str(MELHOR_OFERTA_COMPRA).replace(".",",")+";"+str(MELHOR_OFERTA_VENDA).replace(".",",")+";"
                 #fim
                 +TOTAL_NEGOCIOS+";"+TITULOS_NEGOCIADOS+";"
-                +VOLUME_TIT_NEGOCIADOS+";"+PRE_EX_OP+";"
+                +VOLUME_TIT_NEGOCIADOS+";"+str(PRE_EX_OP).replace(".",",")+";"
                 +IND_OPC+";"+DATA_VENC_OP+";"+FATOR_DE_COT+";"
                 +PTO_EXE+";"+COD_ISIN+";"+DISMES+";\n")
 #escreve no novo arquivo já no formato .csv ignorando headers e trailers
